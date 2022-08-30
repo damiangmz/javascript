@@ -55,12 +55,12 @@ function conversion (){
     let euro = 138.91;
     let resultado = 0;
     let ingresarMoneda = prompt("Ingrese la moneda a la que desea convertir ");
-    if (ingresarMoneda = "dolar") {
+    if (ingresarMoneda === "dolar") {
         let valor = parseInt(prompt("ingrese un numero"));
         resultado = valor / dolar;
         alert("el cambio de pesos a dolar es: $" + resultado.toFixed(2))
     }
-    else if (ingresarMoneda = "euro"){
+    else if (ingresarMoneda === "euro"){
         let valor = parseInt(prompt("ingrese un numero"));
         resultado = valor / euro;
         alert("el cambio de pesos a euro es: $" + resultado.toFixed(2));
