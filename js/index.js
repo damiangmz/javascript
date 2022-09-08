@@ -27,13 +27,19 @@ class CrearMoneda{  //crear objeto
     }
 
 }
-let moneda1 = new CrearMoneda("peso chileno" , 15.92);
-let moneda2 = new CrearMoneda("real" , 139.67)
+let pesoChileno = new CrearMoneda("peso chileno" , 15.92);
+let real = new CrearMoneda("real" , 139.67)
 
-console.log(moneda1);
-console.log(moneda2);
-const array = []; //agregando array
-array.push(moneda1 , moneda2);
+const MonedasCreadas = []; //array para acumular monedas creadas
 
-console.log(array);
 
+
+MonedasCreadas.push(pesoChileno); //sumado al array 
+MonedasCreadas.push(real);
+console.log(MonedasCreadas);
+
+const nombreMonedas = MonedasCreadas.map((el) => el.nombre); //MAP para ver nombres de monedas creadas
+console.log(nombreMonedas);
+
+const filtrarMoneda = MonedasCreadas.filter((el) => el.nombre.includes('peso chileno')); //filtrar moneda con nombre peso chileno 
+console.log(filtrarMoneda);
