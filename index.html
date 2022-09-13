@@ -17,7 +17,14 @@
           <form action="">
             <label>
               <label>Importe</label>
-              <input id="rango" type="range" min="0" max="9999" value="0" />
+              <input
+                id="rango"
+                type="range"
+                min="0"
+                max="9999"
+                value="0"
+                onchange="convertir"
+              />
               <span id="texto">0</span>
             </label>
             <label>De:</label>

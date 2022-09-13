@@ -59,13 +59,12 @@ function conversion() {
     let a = document.getElementById("a");
     resultado = 0;
     if (de == 1 && a ==2) {
-        resultado = rango/dolar;
-        alert(resultado);
-        
+        let resultado = rango/dolar;
+        document.getElementById("resultado").innerHTML = "resultado: $" + resultado.toFixed(2);
+    conversion()
         
     }
-    document.getElementById("resultado").innerHTML = "resultado: $" + rango.toFixed(2);
-    conversion()
+    
     
     
     
