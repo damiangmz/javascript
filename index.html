@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <main>
       <section>
@@ -16,25 +17,26 @@
           <form action="">
             <label>
               <label>Importe</label>
-              <input type="number" name="myInput" required />
+              <input id="rango" type="range" min="0" max="9999" value="0" />
+              <span id="texto">0</span>
             </label>
             <label>De:</label>
-            <select>
-              <option>Peso Argentino</option>
-              <option>Dolar</option>
-              <option>Euro</option>
-              <option>Peso Chileno</option>
-              <option>Real</option>
+            <select id="de" onchange="convertir()">
+              <option value="1">Peso Argentino</option>
+              <option value="2">Dolar</option>
+              <option value="3">Euro</option>
+              <option value="4">Peso Chileno</option>
+              <option value="5">Real</option>
             </select>
             <label>A:</label>
-            <select>
-              <option>Peso Argentino</option>
-              <option>Dolar</option>
-              <option>Euro</option>
-              <option>Peso Chileno</option>
-              <option>Real</option>
+            <select id="a" onchange="convertir()">
+              <option value="1">Peso Argentino</option>
+              <option value="2">Dolar</option>
+              <option value="3">Euro</option>
+              <option value="4">Peso Chileno</option>
+              <option value="5">Real</option>
             </select>
-            <input type="button" value="Convertir" onclick="" />
+            <label id="resultado">Resultado: $0.00</label>
           </form>
         </div>
       </section>

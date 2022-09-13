@@ -1,5 +1,5 @@
 
-function conversion (){
+/*function conversion (){
     let dolar = 138.60;
     let euro = 138.91;
     let resultado = 0;
@@ -42,4 +42,35 @@ const nombreMonedas = MonedasCreadas.map((el) => el.nombre); //MAP para ver nomb
 console.log(nombreMonedas);
 
 const filtrarMoneda = MonedasCreadas.filter((el) => el.nombre.includes('peso chileno')); //filtrar moneda con nombre peso chileno 
-console.log(filtrarMoneda);
+console.log(filtrarMoneda);*/
+let dolar = 138.60;
+let euro = 138.91;
+let real = 139.67;
+let PesoChileno = 15.92
+
+
+const rango = document.querySelector("#rango");
+const valor = document.querySelector("#valor");
+rango.oninput = () => { //entrega de DOM
+    texto.innerHTML = rango.value
+}
+function conversion() {
+    let de = document.getElementById("de");
+    let a = document.getElementById("a");
+    resultado = 0;
+    if (de == 1 && a ==2) {
+        resultado = rango/dolar;
+        alert(resultado);
+        
+        
+    }
+    document.getElementById("resultado").innerHTML = "resultado: $" + rango.toFixed(2);
+    conversion()
+    
+    
+    
+    
+    }
+    
+
+
