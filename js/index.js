@@ -49,27 +49,18 @@ let real = 139.67;
 let PesoChileno = 15.92
 
 
-const rango = document.querySelector("#rango");
+const importe = document.querySelector("#importe");
 const valor = document.querySelector("#valor");
-rango.oninput = () => { //entrega de DOM
-    texto.innerHTML = rango.value
+importe.oninput = () => { //entrega de DOM
+    texto.innerHTML = importe.value
 }
-function conversion() {
-    let de = document.getElementById("de");
-    let a = document.getElementById("a");
-    resultado = 0;
-    if (de == 1 && a ==2) {
-        let resultado = rango/dolar;
-        document.getElementById("resultado").innerHTML = "resultado: $" + resultado.toFixed(2);
-    conversion()
-        
-    }
-    
-    
-    
-    
-    
-    }
-    
+let de = document.getElementById("de");
+let a = document.getElementById("a");
+if (de == 1 && a == 2) {
+    let resultado = importe / dolar;
+    alerte (resultado)
+}
+
+
 
 
