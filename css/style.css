@@ -1,0 +1,18 @@
+.contenedor {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+label {
+  padding: 5px;
+}
+.monedas {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}

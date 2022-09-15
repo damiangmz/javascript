@@ -1,46 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <main>
-      <section>
-        <div>
-          <h1>Convertidor de monedas</h1>
-        </div>
-        <div>
-          <form action="">
-            <label>
-              <label>Importe</label>
-              <input id="importe" type="number" value="0" />
-              <span id="texto">0</span>
-            </label>
-            <label>De:</label>
-            <select id="de">
-              <option value="1">Peso Argentino</option>
-              <option value="2">Dolar</option>
-              <option value="3">Euro</option>
-              <option value="4">Peso Chileno</option>
-              <option value="5">Real</option>
-            </select>
-            <label>A:</label>
-            <select id="a">
-              <option value="1">Peso Argentino</option>
-              <option value="2">Dolar</option>
-              <option value="3">Euro</option>
-              <option value="4">Peso Chileno</option>
-              <option value="5">Real</option>
-            </select>
-            <input type="button" value="convertir" id="boton" />
-          </form>
-        </div>
-      </section>
-    </main>
-    <script src="./js/index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body >
+  <main class="main">
+    <section class="seccion">
+      <div>
+        <h1>Convertidor de monedas</h1>
+      </div>
+      <div>
+        <form class="contenedor">
+          <label>Selecione moneda a la que desea convertir</label>
+          <div class="monedas">
+            <input type="radio" name="moneda" id="dolar">Dolar
+            <input type="radio" name="moneda" id="euro"> Euro
+            <input type="radio" name="moneda" id="real"> Real
+          </div>
+          <input type="number" id="importe" min="0" max="999999999" placeholder="Ingrese monto">
+          <label id="texto">$0</label>
+          <input type="button" id="cotizador" value="cotizar">
+      </div>
+    </section>
+  </main>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>
