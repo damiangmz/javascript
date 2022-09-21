@@ -2,12 +2,16 @@
   display: flex;
   flex-direction: column;
 }
+h1 {
+  text-align: center;
+}
 .main {
   display: flex;
-  align-items: center;
-
   justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
+
 label {
   padding: 5px;
 }
