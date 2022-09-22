@@ -7,9 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400&family=Roboto+Slab&display=swap"
+    rel="stylesheet">
 </head>
 
-<body >
+<body>
   <main class="main">
     <section class="seccion">
       <div>
@@ -17,15 +22,17 @@
       </div>
       <div>
         <form class="contenedor">
-          <label>Selecione moneda a la que desea convertir</label>
+          <label class="texto">Selecione moneda a la que desea convertir</label>
           <div class="monedas">
             <input type="radio" name="moneda" id="dolar">Dolar
             <input type="radio" name="moneda" id="euro"> Euro
             <input type="radio" name="moneda" id="real"> Real
           </div>
-          <input type="number" id="importe" min="0" max="999999999" placeholder="Ingrese monto">
-          <label id="texto">$0</label>
-          <input type="button" id="cotizador" value="cotizar">
+          <div class="inputs">
+            <input class="box" type="number" id="importe" min="0" max="999999999" placeholder="Ingrese monto">
+            <label id="texto">$0</label>
+            <input type="button" id="cotizador" value="cotizar">
+          </div>
       </div>
     </section>
   </main>
