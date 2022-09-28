@@ -32,6 +32,13 @@ function convertir() {
   else if(document.getElementById("real").checked){
     resultado = valor/ real.cotizacion;
   }
+  else{ //incorparando libreria sweetalert
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'No seleccionaste una moneda',
+    })
+  }
   container.innerHTML= "$"+ " " + resultado.toFixed(2);
   //cada operacion que haga se agregue a un array para despues guardarla en el local storage
   let historialDeCotizacion =[];
