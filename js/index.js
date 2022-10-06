@@ -56,3 +56,19 @@ localStorage.setItem("moneda", enjson);
 
 let container = document.getElementById("resultado"); //div para mostrar resultados
 container.innerHTML= "$"+ " " + resultado;
+
+//probando fletch
+const lista = document.getElementById("lista")
+fetch('/data.json')
+.then(response =>response.json())
+.then(data => {
+  data.forEach(item => {
+    let li = document.createElement("li");
+    li.innerHTML = `
+    <h2> Moneda: ${item.nombre}</h2>
+    <h2> Cotizacion: ${item.cotizacion}</h2>
+    `;
+    lista.append(li);
+    
+  });
+})
