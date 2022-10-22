@@ -1,3 +1,4 @@
+
 const monedaEl_one = document.getElementById('moneda-uno');
 const monedaEl_two = document.getElementById('moneda-dos');
 const cantidadEl_one = document.getElementById('cantidad-uno');
@@ -61,7 +62,7 @@ function validar() {
 		alert("Todos los campos son obligatorios");
 		return false;
 	}
-	else if (nombre.length>30){
+	else if (nombre.length>2){
 		alert("El nombre es muy largo");
 		return false;
 	}
@@ -90,10 +91,11 @@ function validar() {
 		return false;
 	}
     else{
-        alert("registrado")
+        location.remplace("login.html")
     }
 }
+
 let boton = document.getElementById('boton')
-boton.addEventListener('click', () =>{
-    Swal.fire('Any fool can use a computer')
+boton.addEventListener('click', ()=>{
+	prompt("hola")
 });
