@@ -5,6 +5,8 @@ const cantidadEl_two = document.getElementById('cantidad-dos'); //ver esto
 const cambioEl = document.getElementById('cambio');
 const resultado = document.getElementById('resultado')
 const tazaEl = document.getElementById('tasa');
+let inputInicial = document.getElementById('cantidad-uno').value;
+let mensaje = document.getElementById('mje')
 
 function calculate(){
   let moneda_one = monedaEl_one.value;
@@ -14,15 +16,21 @@ function calculate(){
   .then(res => res.json() )
    .then(data => {
        const tasa = data.rates[moneda_two];
-       
        cambioEl.innerText = `1 ${moneda_one} = ${tasa} ${moneda_two}`;
-
        cantidadEl_two.value = (cantidadEl_one.value * tasa).toFixed(2);
-       
-       
-
     } );
 }
+if (inputInicial === 2) {
+    msj = 'Lo sentimos no tenemos poliza disponible';
+    mje.innerHTML = `
+    <div>
+        <span>${msj}</span>
+        
+    </div>
+    `;
+    
+}
+console.log(inputInicial);
 
 //Event listeners
 monedaEl_one.addEventListener('change', calculate);
@@ -37,3 +45,55 @@ tasa.addEventListener('click', () =>{
     calculate();
 } );
 
+//login
+function validar() {
+	let nombre, apellidos, correo, usuario, clave, telefono, expresion;
+	nombre = document.getElementById("nombre").value;
+	apellidos = document.getElementById("apellidos").value;
+	correo = document.getElementById("correo").value;
+	usuario = document.getElementById("usuario").value;
+	clave = document.getElementById("clave").value;
+	telefono = document.getElementById("telefono").value;
+
+	expresion = /\w+@\w+\.+[a-z]/;
+
+	if (nombre === "" || apellidos === ""  || correo === "" || usuario === "" || clave === "" || telefono === ""){
+		alert("Todos los campos son obligatorios");
+		return false;
+	}
+	else if (nombre.length>30){
+		alert("El nombre es muy largo");
+		return false;
+	}
+	else if (apellidos.length>80){
+		alert("Los apellidos son muy largos");
+		return false;
+	}
+	else if (correo.length>100){
+		alert("El correo es muy largo");
+		return false;
+	}
+	else if (!expresion.test(correo)){
+		alert("El correo no es válido");
+		return false;
+	}
+	else if (usuario.length>20 || clave.length>20){
+		alert("El usuario y la clave solo deben tener 20 caracteres como máximo");
+		return false;
+	}
+	else if (telefono.length>15){
+		alert("El teléfono es muy largo");
+		return false;
+	}
+	else if (isNaN(telefono)){
+		alert("El teléfono ingresado no es de tipo numerico");
+		return false;
+	}
+    else{
+        alert("registrado")
+    }
+}
+let boton = document.getElementById('boton')
+boton.addEventListener('click', () =>{
+    Swal.fire('Any fool can use a computer')
+});
