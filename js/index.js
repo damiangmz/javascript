@@ -1,58 +1,39 @@
+const monedaEl_one = document.getElementById('moneda-uno');
+const monedaEl_two = document.getElementById('moneda-dos');
+const cantidadEl_one = document.getElementById('cantidad-uno');
+const cantidadEl_two = document.getElementById('cantidad-dos'); //ver esto
+const cambioEl = document.getElementById('cambio');
+const resultado = document.getElementById('resultado')
+const tazaEl = document.getElementById('tasa');
 
-let resultado = 0;
-//constructor de objetos (monedas)
-function monedas (nombre, cotizacion){
-  this.nombre = nombre;
-  this.cotizacion = cotizacion;
+function calculate(){
+  let moneda_one = monedaEl_one.value;
+  let moneda_two = monedaEl_two.value;
+
+  fetch(`https://api.exchangerate-api.com/v4/latest/${moneda_one}`)
+  .then(res => res.json() )
+   .then(data => {
+       const tasa = data.rates[moneda_two];
+       
+       cambioEl.innerText = `1 ${moneda_one} = ${tasa} ${moneda_two}`;
+
+       cantidadEl_two.value = (cantidadEl_one.value * tasa).toFixed(2);
+       
+       
+
+    } );
 }
-//monedas
-const dolar = new monedas("dolar", 138.6);
-const euro = new monedas ("euro", 139.91);
-const real = new monedas ("real", 139.67);
 
-//array de monedas
-const listaMonedas = []; 
-listaMonedas.push(dolar);
-listaMonedas.push(euro);
-listaMonedas.push(real);
-console.log(listaMonedas);
+//Event listeners
+monedaEl_one.addEventListener('change', calculate);
+cantidadEl_one.addEventListener('input', calculate);
+monedaEl_two.addEventListener('change', calculate);
+cantidadEl_two.addEventListener('input', calculate);
 
-//funcion para convertir monedas
-function convertir() {
-  
-  let valor = parseInt(document.getElementById("importe").value);
-  
-  if (document.getElementById("dolar").checked) {
-    resultado = valor / dolar.cotizacion;
-     
-  }
-  else if (document.getElementById("euro").checked){
-    resultado = valor / euro.cotizacion;
-  }
-  else if(document.getElementById("real").checked){
-    resultado = valor/ real.cotizacion;
-  }
-  else{ //incorparando libreria sweetalert
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'No seleccionaste una moneda',
-    })
-  }
-  container.innerHTML= "$"+ " " + resultado.toFixed(2);
-  //cada operacion que haga se agregue a un array para despues guardarla en el local storage
-  let historialDeCotizacion =[];
-  historialDeCotizacion.push(resultado);  
-  localStorage.setItem("historial", resultado);
-}
-let boton = document.getElementById("cotizador"); //Incorporacion de evento click
-boton.addEventListener("click", convertir);
+tasa.addEventListener('click', () =>{
+    const temp = monedaEl_one.value;
+    monedaEl_one.value = monedaEl_two.value;
+    monedaEl_two.value = temp;
+    calculate();
+} );
 
-/*let nombre = prompt("Ingrese su nombre") //Probando localStorage y json
-localStorage.setItem("usuario" , nombre);*/
-const monedaCl = { id:1, nombre: "peso chileno", valor: "6" }; 
-const enjson = JSON.stringify(monedaCl);
-localStorage.setItem("moneda", enjson);
-
-let container = document.getElementById("resultado"); //div para mostrar resultados
-container.innerHTML= "$"+ " " + resultado;
