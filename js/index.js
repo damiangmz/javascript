@@ -2,14 +2,14 @@
 const monedaEl_one = document.getElementById('moneda-uno');
 const monedaEl_two = document.getElementById('moneda-dos');
 const cantidadEl_one = document.getElementById('cantidad-uno');
-const cantidadEl_two = document.getElementById('cantidad-dos'); //ver esto
+const cantidadEl_two = document.getElementById('cantidad-dos'); 
 const cambioEl = document.getElementById('cambio');
 const resultado = document.getElementById('resultado')
 const tazaEl = document.getElementById('tasa');
 
 let mensaje = document.getElementById('mje')
 
-function calculate(){
+function calculate(){ //funcion para calcular conversion
   let moneda_one = monedaEl_one.value;
   let moneda_two = monedaEl_two.value;
 
@@ -32,14 +32,20 @@ function alertaMensaje(){ //sweetalert
       })
     
 }
-function alertaMensaje2(){ //sweetalert
-    Swal.fire({
-        icon: 'error',
-        text: 'Ingrese un importe mayor a 0',
-      })
-    
+function otrasMonedas (nombre, cotizacion){  //constructor de ojetos-monedas
+    this.nombre = nombre;
+    this.cotizacion = cotizacion;
 }
+let dolarBlue = new otrasMonedas("dolar blue", 291);
+console.log(dolarBlue)
+let dolarTurista = new otrasMonedas("dolar turista", 319);
+let dolarBna = new otrasMonedas("dolar bna",159.5 );
 
+let arrayMonedas = []; //array de monedas
+arrayMonedas.push(dolarBlue);
+arrayMonedas.push(dolarTurista);
+arrayMonedas.push(dolarBna);
+console.log(arrayMonedas);
 
 //Event listeners
 monedaEl_one.addEventListener('change', calculate);
@@ -53,14 +59,6 @@ tasa.addEventListener('click', () =>{
     monedaEl_two.value = temp;
     calculate();
 } );
-
-
-
-
-
-//login let nombre, apellidos, correo, usuario, clave, telefono, expresion;
-
-
 
 
 
