@@ -10,60 +10,25 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
   </head>
   <body>
-    <h1>Formulario de Registro</h1>
-    <form class="form-register">
-      <h2 class="form-titulo">CREA UNA CUENTA</h2>
-      <div class="contenedor-inputs">
-        <input
-          type="text"
-          id="nombre"
-          name="nombre"
-          placeholder="Nombre"
-          class="input-48"
-          required
-        />
-        <input
-          type="text"
-          id="apellidos"
-          name="apellidos"
-          placeholder="Apellidos"
-          class="input-48"
-          required
-        />
-        <input
-          type="email"
-          id="correo"
-          name="correo"
-          placeholder="Correo"
-          class="input-100"
-          required
-        />
-        <input
-          type="text"
-          id="usuario"
-          name="usuario"
-          placeholder="Usuario"
-          class="input-48"
-          required
-        />
-        <input
-          type="password"
-          id="clave"
-          name="clave"
-          placeholder="Contraseña"
-          class="input-48"
-          required
-        />
-        <input
-          type="text"
-          id="telefono"
-          name="telefono"
-          placeholder="Teléfono"
-          class="input-100"
-          required
+    
+    <form class="" method="POST" id="form">
+      <h1>Formulario de Registro</h1>
+      <div>
+        <input type="text" name="" id="name">
+        <label for="">Nombre</label>
+      </div>
+      <div>
+        <input type="email" id="email">
+        <label for="Email"></label>
+      </div>
+      <div>
+        <input type="password" id="password">
+        <label for="">Password</label>
+      </div>
         />
 
-        <input type="submit" value="Registrar" id="boton" class="btn-enviar" />
+        <button type="submit">Registar</button>
+
         <p class="form-link">
           Ya tienes una cuenta?<a href="/index.html" target="_blank"
             >Ingresá al conversor aquí</a
@@ -71,6 +36,9 @@
         </p>
       </div>
     </form>
+    <button class="btn" id="boton2">icono de cambio</button>
+    <p class="warnings" id="warnings"></p>
+
     <script type="text/javascript" src="../js/index.js"></script>
   </body>
 </html>

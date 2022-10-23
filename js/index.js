@@ -6,7 +6,7 @@ const cantidadEl_two = document.getElementById('cantidad-dos'); //ver esto
 const cambioEl = document.getElementById('cambio');
 const resultado = document.getElementById('resultado')
 const tazaEl = document.getElementById('tasa');
-let inputInicial = document.getElementById('cantidad-uno').value;
+
 let mensaje = document.getElementById('mje')
 
 function calculate(){
@@ -20,18 +20,26 @@ function calculate(){
        cambioEl.innerText = `1 ${moneda_one} = ${tasa} ${moneda_two}`;
        cantidadEl_two.value = (cantidadEl_one.value * tasa).toFixed(2);
     } );
+    let inputCantidad = cantidadEl_one.value
+    if (inputCantidad < 0 ){  //condicional
+       alertaMensaje()
+    }
 }
-if (inputInicial === 2) {
-    msj = 'Lo sentimos no tenemos poliza disponible';
-    mje.innerHTML = `
-    <div>
-        <span>${msj}</span>
-        
-    </div>
-    `;
+function alertaMensaje(){ //sweetalert
+    Swal.fire({
+        icon: 'error',
+        text: 'Ingrese un importe mayor a 0',
+      })
     
 }
-console.log(inputInicial);
+function alertaMensaje2(){ //sweetalert
+    Swal.fire({
+        icon: 'error',
+        text: 'Ingrese un importe mayor a 0',
+      })
+    
+}
+
 
 //Event listeners
 monedaEl_one.addEventListener('change', calculate);
@@ -46,56 +54,17 @@ tasa.addEventListener('click', () =>{
     calculate();
 } );
 
-//login
-function validar() {
-	let nombre, apellidos, correo, usuario, clave, telefono, expresion;
-	nombre = document.getElementById("nombre").value;
-	apellidos = document.getElementById("apellidos").value;
-	correo = document.getElementById("correo").value;
-	usuario = document.getElementById("usuario").value;
-	clave = document.getElementById("clave").value;
-	telefono = document.getElementById("telefono").value;
 
-	expresion = /\w+@\w+\.+[a-z]/;
 
-	if (nombre === "" || apellidos === ""  || correo === "" || usuario === "" || clave === "" || telefono === ""){
-		alert("Todos los campos son obligatorios");
-		return false;
-	}
-	else if (nombre.length>2){
-		alert("El nombre es muy largo");
-		return false;
-	}
-	else if (apellidos.length>80){
-		alert("Los apellidos son muy largos");
-		return false;
-	}
-	else if (correo.length>100){
-		alert("El correo es muy largo");
-		return false;
-	}
-	else if (!expresion.test(correo)){
-		alert("El correo no es válido");
-		return false;
-	}
-	else if (usuario.length>20 || clave.length>20){
-		alert("El usuario y la clave solo deben tener 20 caracteres como máximo");
-		return false;
-	}
-	else if (telefono.length>15){
-		alert("El teléfono es muy largo");
-		return false;
-	}
-	else if (isNaN(telefono)){
-		alert("El teléfono ingresado no es de tipo numerico");
-		return false;
-	}
-    else{
-        location.remplace("login.html")
-    }
-}
 
-let boton = document.getElementById('boton')
-boton.addEventListener('click', ()=>{
-	prompt("hola")
-});
+
+//login let nombre, apellidos, correo, usuario, clave, telefono, expresion;
+
+
+
+
+
+
+
+
+
