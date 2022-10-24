@@ -34,6 +34,8 @@ label {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 30px;
+  display: flex;
+  flex-direction: row;
 }
 body {
   background-image: url(../assets/fondo2.jpg);
@@ -50,6 +52,11 @@ body {
 .inputs {
   display: flex;
   justify-content: center;
+  height: 500px;
+}
+input {
+  height: 25px;
+  width: 200px;
 }
 .contendor_resultado {
   text-align: center;
@@ -57,4 +64,24 @@ body {
   color: white;
   font-family: "Roboto Flex", sans-serif;
 }
-/*login*/
+.icono {
+  color: rgb(117, 2, 240);
+  width: 15px;
+}
+.btn {
+  width: 50px;
+  height: 65px;
+  margin-left: 2px;
+}
+.box_dos {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.moneda {
+  padding: 2px;
+}
+select {
+  width: 60px;
+  height: 30px;
+}
