@@ -24,6 +24,7 @@ function calculate(){ //funcion para calcular conversion
     if (inputCantidad < 0 ){  //condicional
        alertaMensaje()
     }
+    localStorage.setItem('calculo',cantidadEl_two.value) //guardar en el local storage
 }
 function alertaMensaje(){ //sweetalert
     Swal.fire({
